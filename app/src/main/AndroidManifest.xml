@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mx.itesm.edu.earthone.facerecognition">
 
+    <!--Agregamos este feature para la camara
+    Permiso que da acceso al hardware
+    Sirve para decir que usaremos una cosa extra-->
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 
     <application
@@ -11,6 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--Agregar dependencia de libreria 'com.google.android.gms:play-services-vision:11.4.0'
+        Indico que necesito de la libreria-->
+        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="face"/>
 
 
         <activity android:name=".MainActivity">
